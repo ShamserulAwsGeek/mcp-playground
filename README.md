@@ -104,26 +104,26 @@ You: exit     # quit
 │                                                              │
 │  ┌─────────────────────┐      ┌────────────────────────────┐ │
 │  │   server/client.py  │      │  mcp-server/client-sse.py  │ │
-│  │   ─────────────────  │      │  mcp-server/client-stdio.py│ │
-│  │   MCPAgent           │      │  ────────────────────────  │ │
+│  │   ───────────────── │      │  mcp-server/client-stdio.py│ │
+│  │   MCPAgent          │      │  ────────────────────────  │ │
 │  │   Groq (Qwen) LLM   │      │  Raw MCP ClientSession     │ │
 │  └──────────┬──────────┘      └────────────┬───────────────┘ │
-└─────────────┼───────────────────────────────┼────────────────┘
-              │ stdio (subprocess)             │ SSE (HTTP) / stdio
-              ▼                               ▼
+└─────────────┼──────────────────────────────┼──────────────── ┘
+              │ stdio (subprocess)           │ SSE (HTTP) / stdio
+              ▼                              ▼
 ┌─────────────────────────┐   ┌──────────────────────────────┐
-│  server/weather.py       │   │  mcp-server/server.py        │
-│  ──────────────────────  │   │  ──────────────────────────  │
-│  FastMCP (stdio)         │   │  FastMCP (SSE, port 8000)    │
-│  Tools: get_weather_     │   │  Tools: get_alerts           │
-│         alerts           │   │         get_forecast         │
+│  server/weather.py      │   │  mcp-server/server.py        │
+│  ────────────────────── │   │  ──────────────────────────  │
+│  FastMCP (stdio)        │   │  FastMCP (SSE, port 8000)    │
+│  Tools: get_weather_    │   │  Tools: get_alerts           │
+│         alerts          │   │         get_forecast         │
 └──────────┬──────────────┘   └──────────────┬───────────────┘
-           │                                  │
-           └──────────────┬───────────────────┘
+           │                                 │
+           └──────────────┬──────────────────┘
                           ▼
               ┌───────────────────────┐
-              │     NOAA NWS REST API  │
-              │  api.weather.gov       │
+              │     NOAA NWS REST API │
+              │  api.weather.gov      │
               └───────────────────────┘
 ```
 
