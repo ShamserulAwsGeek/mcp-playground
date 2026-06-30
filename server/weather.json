@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "weather": {
+      "command": "/opt/homebrew/bin/uv",
+      "args": [
+        "run",
+        "--frozen",
+        "--with",
+        "mcp[cli]",
+        "mcp",
+        "run",
+        "/Users/md_haque@optum.com/Library/CloudStorage/OneDrive-UHG/Desktop/mcp-lab/server/weather.py"
+      ]
+    }
+  }
+}
